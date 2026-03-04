@@ -4,7 +4,7 @@ public class tower : MonoBehaviour
 {
     public GameObject projectilePrefab;
     public Transform firepoint;
-    public float cooldown = 1f;
+    public float cooldown = 1.2f;
     public float attackTimer;
 
     public Transform target;
