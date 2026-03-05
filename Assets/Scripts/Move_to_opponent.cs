@@ -16,12 +16,11 @@ public class Move_to_opponent : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (in_Range.inrange)
-        {
+       
 
             gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, Enemy.transform.position, 10f * Time.deltaTime);
             Rotate_towards_enemy();
-        }
+       
 
     }
 

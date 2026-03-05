@@ -24,7 +24,7 @@ public class Movement : MonoBehaviour
 
      
         // Rechte Maustaste → Ziel setzen
-        if (Input.GetMouseButtonDown(1))
+        if ( Input.GetMouseButton(1))
         {
             
           
@@ -33,6 +33,7 @@ public class Movement : MonoBehaviour
             RotatePlayer(targetPosition);
             isMoving = true;
         }
+        
         if (Input.GetKeyDown(KeyCode.Q))
         {
             Shoot();
