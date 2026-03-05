@@ -3,13 +3,15 @@ using UnityEngine;
 
 public class Move_to_opponent : MonoBehaviour
 {
-    public in_range in_Range;
+    public Tower_attack in_Range;
+    public Enemy_logic Enemy_logic;
     public GameObject Enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        in_Range = GameObject.FindWithTag("Tower").GetComponent<in_range>();
+        in_Range = GameObject.FindWithTag("Tower").GetComponent<Tower_attack>();
         Enemy = in_Range.First_enemy_in_range.gameObject;
+        Enemy_logic = Enemy.GetComponent<Enemy_logic>();
 
     }
 
@@ -29,7 +31,7 @@ public class Move_to_opponent : MonoBehaviour
         
         if (collision.gameObject.layer == 6)
         {
-            Destroy(collision.gameObject);
+            Enemy_logic.Health -= 100;
             Destroy(gameObject);
 
 

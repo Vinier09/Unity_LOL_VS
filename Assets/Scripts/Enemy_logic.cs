@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Enemy_logic : MonoBehaviour
 {
-    int Health = 300;
+   public int Health = 300;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

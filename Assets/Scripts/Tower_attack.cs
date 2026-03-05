@@ -1,7 +1,7 @@
 using UnityEditor;
 using UnityEngine;
 
-public class in_range : MonoBehaviour
+public class Tower_attack : MonoBehaviour
 {
     public CircleCollider2D CircleCollider2D;
 
