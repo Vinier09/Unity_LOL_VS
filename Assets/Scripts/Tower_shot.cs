@@ -1,16 +1,16 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class Move_to_opponent : MonoBehaviour
+public class Tower_shot : MonoBehaviour
 {
-    public Tower_attack in_Range;
+    public Tower_Logic in_Range;
     public Enemy_logic Enemy_logic;
     public GameObject Enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        in_Range = GameObject.FindWithTag("Tower").GetComponent<Tower_attack>();
-        Enemy = in_Range.First_enemy_in_range.gameObject;
+        in_Range = GameObject.FindWithTag("Tower").GetComponent<Tower_Logic>();
+        Enemy = in_Range.Target_NOW.gameObject;
         Enemy_logic = Enemy.GetComponent<Enemy_logic>();
 
     }
