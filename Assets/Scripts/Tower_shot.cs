@@ -1,27 +1,28 @@
 using JetBrains.Annotations;
 using UnityEngine;
 
-public class Move_to_opponent : MonoBehaviour
+public class Tower_shot : MonoBehaviour
 {
-    public in_range in_Range;
+    public Tower_Logic in_Range;
+    public Enemy_logic Enemy_logic;
     public GameObject Enemy;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        in_Range = GameObject.FindWithTag("Tower").GetComponent<in_range>();
-        Enemy = in_Range.First_enemy_in_range.gameObject;
+        in_Range = GameObject.FindWithTag("Tower").GetComponent<Tower_Logic>();
+        Enemy = in_Range.Target_NOW.gameObject;
+        Enemy_logic = Enemy.GetComponent<Enemy_logic>();
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (in_Range.inrange)
-        {
+       
 
             gameObject.transform.position = Vector2.MoveTowards(gameObject.transform.position, Enemy.transform.position, 10f * Time.deltaTime);
             Rotate_towards_enemy();
-        }
+       
 
     }
 
@@ -30,7 +31,7 @@ public class Move_to_opponent : MonoBehaviour
         
         if (collision.gameObject.layer == 6)
         {
-            Destroy(collision.gameObject);
+            Enemy_logic.Health -= 100;
             Destroy(gameObject);
 
 

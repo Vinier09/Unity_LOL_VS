@@ -7,7 +7,7 @@ public class Enemy_Movment : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        GameObject aa = GameObject.FindWithTag("Tower");
+        GameObject aa = GameObject.FindWithTag("Turret_minion_attack_point");
         target = aa.transform;
 
     }
